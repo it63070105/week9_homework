@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from fastapi import FastAPI,Query
+
 from pydantic import BaseModel
 
 app = FastAPI()
@@ -24,11 +25,26 @@ async def root():
     return {"message": "Hello World"}
 
 
-@app.get("/book/")
-async def get_books():
-    return books
 
-
+## Path parameters
 @app.get("/book/{book_id}")
 async def get_book(book_id: int):
     return books[book_id-1]
+
+
+
+# Quary parameters
+@app.get("/search")
+def search_books(title: str = Query(None), author: str = Query(None)):
+    """
+    Returns a list of books that match the search criteria.
+    """
+    # Filter the list of books by title and/or author
+    books_filtered = books
+    if title is not None:
+        books_filtered = [b for b in books_filtered if title.lower() in b["title"].lower()]
+    if author is not None:
+        books_filtered = [b for b in books_filtered if author.lower() in b["author"].lower()]
+
+    # Return the filtered list of books
+    return {"books": books_filtered}

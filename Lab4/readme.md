@@ -62,3 +62,33 @@ else:
 http://localhost:8087/book/3
 ```
 
+### Test Query Parameters
+
+#### 1. URL
+
+```
+http://localhost:8087/search?title=the&author=tolkien
+```
+
+#### 1. With Python
+
+```
+import requests
+
+url_base     = "http://localhost:8087"
+url          = f"{url_base}/search"
+
+
+params = {
+    "title": "the",
+    "author": "tolkien"
+}
+
+response = requests.get(url, params=params)
+if response.status_code == 200:
+    data = response.json()
+    print(data)
+else:
+    print("Error:", response.status_code, response.json())
+    
+```
