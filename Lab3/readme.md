@@ -1,3 +1,6 @@
+![Alt Text](demo0.jpg)
+
+
 ```
 git clone https://github.com/Tuchsanai/devpot_week9.git
 ```
