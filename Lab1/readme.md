@@ -28,3 +28,16 @@ docker rm mycontainer1
 
 
 ```
+
+### Stop all running containers:
+
+```
+docker stop $(docker ps -a -q)
+```
+
+
+### Remove all containers 
+
+```
+docker rm $(docker ps -a -q)
+```
