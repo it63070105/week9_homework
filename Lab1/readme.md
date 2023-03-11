@@ -1,4 +1,4 @@
-### Create two containers with the names "mycontainer1" and "mycontainer2" using the Nginx and MySQL images:
+### Create two containers with the names "mycontainer1" and "mycontainer2" and "mycontainer3":
 
 ```
 docker run -d --name mycontainer1 nginx:latest
