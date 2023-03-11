@@ -38,3 +38,27 @@ docker build -t fastapi-docker .
 ```
 docker run -p 8087:80 fastapi-docker
 ```
+
+
+### Test Path Parameters
+
+#### 1. With Python
+```
+book_id      = 3
+url_base     = "http://localhost:8087"
+url          = f"{url_base}/book/{book_id}"
+
+response = requests.get(url)
+if response.status_code == 200:
+    data = response.json()
+    print(data)
+else:
+    print("Error:", response.status_code, response.json())
+```
+
+#### 2. URL
+
+```
+http://localhost:8087/book/3
+```
+
