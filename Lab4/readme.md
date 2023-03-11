@@ -29,19 +29,12 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "80"]
 
 ```
 
-Next, create a new file called main.py in the root of your project directory with the following contents:
-
+### build Docker image with docker build 
 ```
-from fastapi import FastAPI, File, Form, UploadFile
-from pydantic import BaseModel
+docker build -t fastapi-docker .
+```
 
-app = FastAPI()
-
-class ImageData(BaseModel):
-    caption: str
-
-@app.post("/uploadimage")
-async def upload_image(image_data: ImageData, file: UploadFile = File(...)):
-    return {"filename": file.filename, "caption": image_data.caption}
-
+### Run the Docker container by executing the following command:
+```
+docker run -p 8087:80 fastapi-docker
 ```
