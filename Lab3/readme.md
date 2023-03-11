@@ -20,6 +20,8 @@ docker build -t flask-docker-app .
 
 # docker run with -it option
 ```
-docker run -p 8081:8081 -e APP_COLOR=red flask-docker-app
+docker run -p 8081:8081  --name container_red  -e APP_COLOR=red flask-docker-app
+docker run -p 8081:8081  --name container_green  -e APP_COLOR=red flask-docker-app
+
 
 ```
