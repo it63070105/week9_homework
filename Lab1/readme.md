@@ -9,7 +9,7 @@ docker run -d --name mycontainer3 redis:latest
 ### List all running containers:
 
 ```
-docker ps
+docker ps -a
 
 ```
 
