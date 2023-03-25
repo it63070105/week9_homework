@@ -123,7 +123,7 @@ def template1(name):
     name = name.replace("%2F", "/")
     print(name)
     # Load the image
-    url_response = urllib.request.urlopen(name)
+    url_response = urllib.request.urlopen("https://picsum.photos/200/300")
     img_array = np.array(bytearray(url_response.read()), dtype=np.uint8)
     image = cv2.imdecode(img_array, -1)
 
