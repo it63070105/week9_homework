@@ -12,3 +12,7 @@
 - docker run -d -p 8088:80 wk9-backend
 - docker run -p 8081:8081 wk9-frontend
 ```
+```
+- cd Week9/frontend
+- docker build -t flask-docker-app .
+```
