@@ -5,23 +5,6 @@
 </head>
 <body>
     <h1>Your image here</h1>
-    <form>
-        a: <input type="text" name="url" id="input1"><br>
-        <button onclick="pass(document.getElementById('input1').value)">Process</button>
-    </form>
-
-    <script>
-        const url = "http://107.21.78.148:8081"
-        async function pass(val) {
-            val = val.replaceAll(":", "%3A")
-            val = val.replaceAll("/", "%2F")
-            console.log(val)
-            let res_url = url + "/url?img=" + val
-            console.log(res_url)
-            let response = await fetch(res_url);
-            return ;
-        }
-    </script>
 
     <img src="data:image/png;base64, {{ image }}" alt="graph">
 </body>
