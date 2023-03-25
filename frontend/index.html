@@ -15,7 +15,8 @@
         async function pass(val) {
             val = val.replace(":", "%3A")
             val = val.replace("/", "%2F")
-            let response = await fetch(url + "/url?img=" + val);
+            let res_url = url + "/url?img=" + val
+            let response = await fetch(res_url);
         }
     </script>
 
