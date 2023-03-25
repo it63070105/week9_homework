@@ -1,5 +1,4 @@
 import io
-import os
 
 import urllib
 from flask import Flask, render_template
@@ -23,7 +22,7 @@ def decode_image(image_string):
     nparr = np.frombuffer(base64.b64decode(encoded_data), np.uint8)
     return cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-url = "http://3.93.181.229:8088"
+url = "http://107.21.78.148:8088"
 
 @app.route('/')
 def home():
