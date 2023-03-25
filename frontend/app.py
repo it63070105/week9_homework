@@ -117,8 +117,11 @@ def template(name):
     return render_template("index.html", image=plot_data)
 
 @app.route('/url/')
-def template1(img):
-    
+def template1(img: str):
+    print(img)
+    img = img.replace("%3A", ":")
+    img = img.replace("%2F", "/")
+    print(img)
     # Load the image
     url_response = urllib.request.urlopen(img)
     img_array = np.array(bytearray(url_response.read()), dtype=np.uint8)
