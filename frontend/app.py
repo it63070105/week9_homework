@@ -1,7 +1,7 @@
 import io
 
 import urllib
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 import requests
 import base64
 import matplotlib.pyplot as plt
@@ -116,14 +116,15 @@ def template(name):
     plot_data = urllib.parse.quote(base64.b64encode(img.read()).decode())
     return render_template("index.html", image=plot_data)
 
-@app.route('/url/<string:name>')
-def template1(name):
+@app.route('/url')
+def template1():
+    name = request.args.get('img')
     print(name)
     name = name.replace("%3A", ":")
     name = name.replace("%2F", "/")
     print(name)
     # Load the image
-    url_response = urllib.request.urlopen("https://picsum.photos/200/300")
+    url_response = urllib.request.urlopen(name)
     img_array = np.array(bytearray(url_response.read()), dtype=np.uint8)
     image = cv2.imdecode(img_array, -1)
 
