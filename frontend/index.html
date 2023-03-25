@@ -13,8 +13,8 @@
     <script>
         const url = "http://107.21.78.148:8081"
         async function pass(val) {
-            val = val.replace(":", "%3A")
-            val = val.replace("/", "%2F")
+            val = val.replaceAll(":", "%3A")
+            val = val.replaceAll("/", "%2F")
             console.log(val)
             let res_url = url + "/url?img=" + val
             console.log(res_url)
