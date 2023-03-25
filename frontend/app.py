@@ -164,7 +164,7 @@ def template1():
     plt.savefig(img, format = 'png')
     img.seek(0)
     plot_data = urllib.parse.quote(base64.b64encode(img.read()).decode())
-    return render_template("index.html", image=plot_data)
+    # return render_template("index.html", image=plot_data)
 
 if __name__ == '__main__':
     app.run(host="0.0.0.0",port="8081")
