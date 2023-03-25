@@ -119,10 +119,10 @@ def template(name):
 @app.route('/url')
 def template1():
     name = request.args.get('img')
-    print(name)
+
     name = name.replace("%3A", ":")
     name = name.replace("%2F", "/")
-    print(name)
+
     # Load the image
     url_response = urllib.request.urlopen(name)
     img_array = np.array(bytearray(url_response.read()), dtype=np.uint8)
