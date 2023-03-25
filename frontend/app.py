@@ -69,8 +69,15 @@ def home():
 
 @app.route('/<string:name>')
 def template(name):
+    
     # Load the image
-    image = cv2.imread(name)
+    if name.find('http') != -1:
+        url_response = urllib.request.urlopen(name)
+        img_array = np.array(bytearray(url_response.read()), dtype=np.uint8)
+        image = cv2.imdecode(img_array, -1)
+    else:
+        image = cv2.imread(name)
+    
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     image_string = encode_image(image)
 
