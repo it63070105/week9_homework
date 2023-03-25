@@ -116,11 +116,11 @@ def template(name):
     plot_data = urllib.parse.quote(base64.b64encode(img.read()).decode())
     return render_template("index.html", image=plot_data)
 
-@app.route('/url/<string:name>')
-def template(name):
+@app.route('/url/')
+def template(img):
     
     # Load the image
-    url_response = urllib.request.urlopen("https://" + name)
+    url_response = urllib.request.urlopen(img)
     img_array = np.array(bytearray(url_response.read()), dtype=np.uint8)
     image = cv2.imdecode(img_array, -1)
 
