@@ -117,7 +117,7 @@ def template(name):
     return render_template("index.html", image=plot_data)
 
 @app.route('/url/')
-def template(img):
+def template1(img):
     
     # Load the image
     url_response = urllib.request.urlopen(img)
