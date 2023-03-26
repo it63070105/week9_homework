@@ -18,16 +18,13 @@
     <script>
         const url = "http://54.152.253.145:8081"
         function byfile(val) {
-            // val = val.replaceAll(":", "%3A")
-            // val = val.replaceAll("/", "%2F")
-            // let response = await fetch(url + "/url?img=" + val);
-            window.open(url + "/file/" + val)
+
+            window.open(url + "/file/" + val, "_self")
         }
         function byurl(val) {
             val = val.replaceAll(":", "%3A")
             val = val.replaceAll("/", "%2F")
-            // let response = await fetch(url + "/url?img=" + val);
-            window.open(url + "/url?img=" + val)
+            window.open(url + "/url?img=" + val, "_self")
         }
     </script>
     <img src="data:image/png;base64, {{ image }}" alt="graph">
