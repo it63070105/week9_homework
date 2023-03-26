@@ -19,12 +19,12 @@
         const url = "http://54.152.253.145:8081"
         function byfile(val) {
 
-            window.open(url + "/file/" + val, "_self")
+            window.open(url + "/file/" + val)
         }
         function byurl(val) {
             val = val.replaceAll(":", "%3A")
             val = val.replaceAll("/", "%2F")
-            window.open(url + "/url?img=" + val, "_self")
+            window.open(url + "/url?img=" + val)
         }
     </script>
     <img src="data:image/png;base64, {{ image }}" alt="graph">
