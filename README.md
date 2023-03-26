@@ -3,8 +3,8 @@
 ```
 nano install_week9_homework.sh
 ```
-```
 # Add the following content to install_week9_homework.sh :
+```
 git clone https://github.com/it63070105/week9_homework.git
 cd week9_homework
 cd backend
